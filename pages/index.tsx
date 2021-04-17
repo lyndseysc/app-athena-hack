@@ -1,18 +1,18 @@
-import { Button } from '@chakra-ui/react';
+import { Button, Heading } from '@chakra-ui/react';
 import Link from 'next/link';
 import { getProducts } from '../api/getProducts';
+import { MobileContainer } from './index.styles';
 
 const App = () => {
   const products = getProducts('chicken sausage');
-  console.log(products, 'PRODUCST !!!!!!!!');
 
   return (
-    <>
-      <div>hello</div>
+    <MobileContainer>
+      <Heading>Welcome to Fern</Heading>
       <Link href='/food/scan'>
         <Button>Scan my food</Button>
       </Link>
-    </>
+    </MobileContainer>
   );
 };
 
