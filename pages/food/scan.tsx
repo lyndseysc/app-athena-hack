@@ -17,6 +17,8 @@ const FoodScan = () => {
     </Flex>
   );
 
+  const capitalizeFirstLetter = (str: string) =>
+    str.charAt(0).toUpperCase() + str.slice(1);
   const textSearch = () => (
     <Flex direction='column' p='4' pt='6'>
       <Flex justifyContent='flex-start' alignItems='center' pl='2'>
@@ -32,8 +34,8 @@ const FoodScan = () => {
       <Flex direction='column'>
         {suggestions.map((suggestion) => (
           <Link href={`/food/profile/${suggestion.id}`}>
-            <Button ml='1' justifyContent='flex-start' overflow='hidden'>
-              {suggestion.name}
+            <Button justifyContent='flex-start' fontWeight='normal' variant=''>
+              <Text isTruncated>{capitalizeFirstLetter(suggestion.name)}</Text>
             </Button>
           </Link>
         ))}
