@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Box, Input, Badge, ChakraProvider } from '@chakra-ui/react';
+import { Box, Input, ChakraProvider } from '@chakra-ui/react';
 import { getProductSuggestions } from 'api/getProductSuggestions';
+import { AnimatedBadge } from '../../styles/index.styles';
 
 const FoodScan = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -16,7 +17,6 @@ const FoodScan = () => {
   }, [searchTerm]);
 
   const handleSearch = (event) => {
-    console.log(event.target.value);
     setSearchTerm(event.target.value);
   };
 
@@ -25,12 +25,12 @@ const FoodScan = () => {
       <Input onChange={(event) => handleSearch(event)} />
 
       {suggestions.map((suggestion) => (
-        <Badge variant='solid' colorScheme='green' ml='1'>
+        <AnimatedBadge variant='solid' colorScheme='green' ml='1'>
           {suggestion}
-        </Badge>
+        </AnimatedBadge>
       ))}
       <Link href='/food/profile'>
-        <div></div>
+        <Box>hello</Box>
       </Link>
     </ChakraProvider>
   );
