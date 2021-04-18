@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Input, Button, ChakraProvider, Flex, Text } from '@chakra-ui/react';
 import { getProductSuggestions } from 'api/getProductSuggestions';
-import { AnimatedBadge } from '../../styles/index.styles';
+import { SearchIcon } from '@chakra-ui/icons';
 
 const FoodScan = () => {
   const [searchType, setSearchType] = useState<any>();
@@ -18,15 +18,26 @@ const FoodScan = () => {
   );
 
   const textSearch = () => (
-    <Flex>
-      <Input onChange={(event) => handleSearch(event)} />
-      {suggestions.map((suggestion) => (
-        <Link href={`/food/profile/${suggestion.id}`}>
-          <Button variant='solid' colorScheme='green' ml='1'>
-            {suggestion.name}
-          </Button>
-        </Link>
-      ))}
+    <Flex direction='column' p='4' pt='6'>
+      <Flex justifyContent='flex-start' alignItems='center' pl='2'>
+        <SearchIcon></SearchIcon>
+        <Text p='2' fontSize='xl'>
+          Search for food
+        </Text>
+      </Flex>
+      <Input
+        onChange={(event) => handleSearch(event)}
+        label='Search for food'
+      />
+      <Flex direction='column'>
+        {suggestions.map((suggestion) => (
+          <Link href={`/food/profile/${suggestion.id}`}>
+            <Button ml='1' justifyContent='flex-start' overflow='hidden'>
+              {suggestion.name}
+            </Button>
+          </Link>
+        ))}
+      </Flex>
     </Flex>
   );
 

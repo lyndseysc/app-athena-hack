@@ -1,8 +1,9 @@
 import { Button, Heading, ChakraProvider, Flex } from '@chakra-ui/react';
 import Link from 'next/link';
+import { theme } from '../theme';
 
 const App = () => (
-  <ChakraProvider>
+  <ChakraProvider theme={theme}>
     <Heading>Welcome to Full Circle 🌽</Heading>
     <Heading>What matters to you?</Heading>
     <Flex>
