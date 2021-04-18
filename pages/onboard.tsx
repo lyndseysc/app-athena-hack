@@ -98,7 +98,7 @@ const Onboard = () => (
           </Text>
         </StyledBox>
       </SimpleGrid>
-      <Link href='/food/scan'>
+      <Link href='/food/scan-or-search'>
         <Button
           bgColor='#0C6B58'
           color='white'

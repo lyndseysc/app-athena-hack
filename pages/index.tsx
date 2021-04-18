@@ -5,9 +5,12 @@ import {
   Flex,
   Box,
   Text,
+  Icon,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { theme } from '../theme';
+// @ts-ignore
+import { Logo } from '../assets/logo.svg';
 
 const Home = () => (
   <ChakraProvider theme={theme}>
@@ -20,6 +23,7 @@ const Home = () => (
       justify='center'
       align='center'
     >
+      <Icon as={Logo} height='auto' width='auto' />
       <Heading color='white' paddingBottom='4rem' fontSize='5xl' align='center'>
         Welcome to Full Circle{' '}
       </Heading>
