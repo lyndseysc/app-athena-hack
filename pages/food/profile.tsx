@@ -377,7 +377,7 @@ const FoodBox = ({ property }) => {
 };
 
 const FoodProfile = () => {
-  const [productData, setProductData] = useState();
+  const [productData, setProductData] = useState<any>();
   const [sortType, setSortType] = useState('albums');
 
   useEffect(() => {
