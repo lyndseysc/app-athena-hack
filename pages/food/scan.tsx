@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Box, Input, ChakraProvider } from '@chakra-ui/react';
+import { Input, Button, ChakraProvider } from '@chakra-ui/react';
 import { getProductSuggestions } from 'api/getProductSuggestions';
 import { AnimatedBadge } from '../../styles/index.styles';
 
@@ -25,13 +25,12 @@ const FoodScan = () => {
       <Input onChange={(event) => handleSearch(event)} />
 
       {suggestions.map((suggestion) => (
-        <AnimatedBadge variant='solid' colorScheme='green' ml='1'>
-          {suggestion}
-        </AnimatedBadge>
+        <Link href={`/food/profile/${suggestion.id}`}>
+          <Button variant='solid' colorScheme='green' ml='1'>
+            {suggestion.name}
+          </Button>
+        </Link>
       ))}
-      <Link href='/food/profile'>
-        <Box>hello</Box>
-      </Link>
     </ChakraProvider>
   );
 };
