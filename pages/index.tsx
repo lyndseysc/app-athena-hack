@@ -24,11 +24,18 @@ const Home = () => (
         Welcome to Full Circle{' '}
       </Heading>
       <Text color='white' fontSize='xl' align='center' paddingBottom='2rem'>
-        Full Circle is an app designed to help you shop in a more thoughtful and
-        sustainable way 🌍
+        Full Circle is empowering users to reduce their environmental impact by
+        making informed decisions on the go to calculate their shops sustainably
+        🌍
       </Text>
       <Link href='/onboard'>
-        <Button bgColor='#014D40' color='white' borderTop='4rem' align='center'>
+        <Button
+          bgColor='#014D40'
+          color='white'
+          borderTop='4rem'
+          align='center'
+          borderRadius='24px'
+        >
           Get Started
         </Button>
       </Link>
